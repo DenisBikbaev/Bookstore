@@ -1,0 +1,17 @@
+.loading {
+  text-align: center;
+  font-size: 60px;
+}
+
+.page {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+}
+
+.card {
+  width: 30%;
+  text-align: center;
+}

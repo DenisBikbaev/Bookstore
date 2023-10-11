@@ -1,0 +1,25 @@
+.form {
+  width: 544px;
+  padding: 32px;
+  border: 1px solid #e7e7e7;
+}
+
+.title {
+  margin-bottom: 32px;
+  padding-bottom: 22px;
+  border-bottom: 2px solid #313037;
+  text-align: center;
+}
+
+.paragraph {
+  margin-top: -8px;
+  margin-bottom: 40px;
+}
+
+.link {
+  text-decoration: none;
+  color: #313037;
+  font-family: "Helios-Regular";
+  font-size: 14px;
+  line-height: 32px;
+}

@@ -1,0 +1,12 @@
+.favorite_book {
+  list-style: none;
+}
+
+.book {
+  display: flex;
+}
+
+.empty {
+  text-align: center;
+  padding: 100px;
+}

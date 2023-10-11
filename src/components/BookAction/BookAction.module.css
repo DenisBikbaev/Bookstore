@@ -1,0 +1,17 @@
+.heart {
+  color: white;
+  font-size: 20px;
+  /* background-color: black; */
+}
+
+.heart_active {
+  color: red;
+  font-size: 20px;
+  /* background-color: black; */
+}
+
+.heart:hover,
+.heart:active {
+  cursor: pointer;
+  color: #fc857f;
+}

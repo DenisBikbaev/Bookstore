@@ -1,0 +1,80 @@
+.wrapper {
+  padding: 0 100px;
+}
+
+.BackLink {
+  width: 20px;
+  text-decoration: none;
+}
+
+.Back {
+  margin-bottom: 20px;
+}
+
+.Back:hover {
+  cursor: pointer;
+}
+
+.top_container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 72px;
+}
+
+.image_container {
+  position: relative;
+}
+
+.image {
+  padding: 61px 122px;
+  background-color: #fee9e2;
+}
+
+.heart_container {
+  background-color: black;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book_info {
+  /* display: flex; */
+  flex-direction: column;
+  width: 45%;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Typography {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tabs_container {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Helios-Regular";
+  margin-bottom: 48px;
+}
+
+.tabs {
+  margin-bottom: 48px;
+}
+
+.tabs_element:hover,
+:active {
+  cursor: text;
+  color: black;
+}
+
+.tabs_item {
+  padding: 0 40px 24px 40px;
+}

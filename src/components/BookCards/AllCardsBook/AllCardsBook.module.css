@@ -1,0 +1,25 @@
+.imgage {
+  background-color: #d7e4fd;
+  position: relative;
+}
+
+.img {
+  padding: 1px 63px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.action {
+  display: flex;
+  justify-content: space-between;
+}
+
+.heart_container {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

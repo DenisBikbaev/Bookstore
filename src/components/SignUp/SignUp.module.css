@@ -1,0 +1,12 @@
+.form {
+  width: 544px;
+  padding: 32px;
+  border: 1px solid #e7e7e7;
+}
+
+.title {
+  margin-bottom: 32px;
+  padding-bottom: 22px;
+  border-bottom: 2px solid #313037;
+  text-align: center;
+}

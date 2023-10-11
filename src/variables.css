@@ -1,0 +1,35 @@
+:root {
+  --main-bg-color: #ffffff;
+  --header-bg-color: #ffffff;
+  --button-bg-color: #313037;
+  --icon-color: #ffffff;
+  --input-bg-color: #ffffff;
+
+  --text-primary: #313037;
+  --text-primary2: #5b5a62;
+  --text-secondary: #a8a8a8;
+  --text-error: #fc857f;
+
+  --border-color: #e7e7e7;
+
+  --input-focus-border-color: #e7e7e7;
+  --input-error-border-color: #fc857f;
+}
+
+body[data-theme="dark"] {
+  --main-bg-color: #313037;
+  --header-bg-color: rgba(255, 255, 255, 0.1);
+  --button-bg-color: #313037;
+  --icon-color: rgba(255, 255, 255, 0.1);
+  --input-color: #313037;
+
+  --text-primary: #ffffff;
+  --text-primary2: red;
+  --text-secondary: rgba(255, 255, 255, 0.5);
+  --text-error: rgba(252, 133, 127, 1);
+
+  --border-color: rgba(255, 255, 255, 0.1);
+
+  --input-focus-border-color: rgba(231, 231, 231, 1);
+  --input-error-border-color: rgba(252, 133, 127, 1);
+}

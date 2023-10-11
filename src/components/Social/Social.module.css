@@ -1,0 +1,30 @@
+.social {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 72px;
+}
+
+.font {
+  font-size: 20px;
+  color: black;
+}
+
+.font:hover,
+:active {
+  cursor: pointer;
+  color: red;
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+button:hover,
+:active {
+  cursor: pointer;
+}
+
+.hide {
+  display: none;
+}

@@ -1,0 +1,49 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 16px 0;
+}
+
+.label {
+  margin-bottom: 4px;
+  font-family: "Helios-Bold";
+  font-size: 16px;
+  font-weight: 32px;
+}
+
+.input {
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border: 1px solid var(--border-color);
+  font-family: "Helios-Regular";
+  font-size: 16px;
+  font-weight: 32px;
+}
+
+.input:focus {
+  outline: none;
+  border: 2px solid var(--input-focus-border-color);
+}
+
+.input:focus::placeholder {
+  color: transparent;
+}
+
+.input:disabled {
+  background-color: #e7e7e7;
+  border-color: #e7e7e7;
+}
+
+.inputError,
+.inputError:focus {
+  border-color: #fc857f;
+}
+
+.helperText {
+  font-size: 14px !important;
+  text-align: right;
+}
+
+.helperTextError {
+  color: #fc857f !important;
+}

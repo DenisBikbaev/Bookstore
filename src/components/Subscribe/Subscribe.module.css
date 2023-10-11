@@ -1,0 +1,31 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 72px;
+  background-color: #f4eefd;
+  padding: 64px 56px;
+  justify-content: flex-start;
+}
+
+.title {
+  margin-bottom: 32px;
+}
+
+.email {
+  display: flex;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #e7e7e7;
+  border-radius: 0px, 2px, 2px, 0px;
+  padding: 5px 25px;
+  font-family: "DINPro-Regular";
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.button {
+  width: 147px;
+  height: 56px;
+}

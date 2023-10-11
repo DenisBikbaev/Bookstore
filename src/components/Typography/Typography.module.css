@@ -1,0 +1,101 @@
+@font-face {
+  font-family: "Helios-Regular";
+  src: url(../../fonts/Helios/HeliosC.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: "Helios-Bold";
+  src: url(../../fonts/Helios/HeliosC-Bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "BebasNeue-Bold";
+  src: url(../../fonts/BebasNeue/BebasNeueBold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: "DINPro-Regular";
+  src: url(../../fonts/DINPro/DINPro.ttf);
+  font-weight: 400;
+}
+
+.primary {
+  color: #313037;
+}
+
+.primary_2 {
+  color: #5b5a62;
+}
+
+.secondary {
+  color: #a8a8a8;
+}
+
+.Helios-Regular {
+  font-family: "Helios-Regular";
+}
+
+.Helios-Bold {
+  font-family: "Helios-Bold";
+}
+
+.BebasNeue-Bold {
+  font-family: "BebasNeue-Bold";
+}
+
+.DINPro-Regular {
+  font-family: "DINPro-Regular";
+}
+
+.h1 {
+  font-size: 56px;
+  line-height: 64px;
+  margin: 0;
+}
+
+.h2 {
+  font-size: 40px;
+  line-height: 60px;
+  margin: 0;
+}
+
+.h3 {
+  font-size: 24px;
+  line-height: 32px;
+  margin: 0;
+}
+
+.h4 {
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.h5 {
+  font-size: 18px;
+  line-height: 28px;
+  margin: 0;
+}
+
+.h6 {
+  font-size: 24px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 32px;
+  margin: 0;
+}
+
+.span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+}

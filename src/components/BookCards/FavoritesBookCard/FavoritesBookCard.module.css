@@ -1,0 +1,42 @@
+.favorite {
+  display: flex;
+}
+
+.image {
+}
+
+.info {
+  width: 60%;
+}
+
+.top_info {
+  align-items: flex-start;
+}
+
+.title {
+}
+
+.other {
+}
+
+.authors {
+}
+
+.publisher {
+}
+
+.year {
+}
+
+.bottom_info {
+  align-items: flex-end;
+}
+
+.price {
+}
+
+.rating {
+}
+
+.remove {
+}
