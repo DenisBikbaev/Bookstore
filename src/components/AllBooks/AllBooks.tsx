@@ -1,26 +1,23 @@
 import React, { useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-import { getBooks } from "../../api/books/getBooks";
 import BookCards from "../BookCards/AllCardsBook/AllCardsBook";
 import { getSlice } from "../../store/books/books.selectors";
-import { setIsBooksLoading, setBooks } from "../../store/books/books.reducers";
 
 import styles from "./AllBooks.module.css";
+import { getBooksThunk } from "../../store/books/books.actions";
+import { AppDispatch } from "../../store";
 
-const AllBooks: React.FC = () => {
+interface AllBooksProps {}
+
+const AllBooks: React.FC<AllBooksProps> = () => {
   const { books, isBooksLoading: loading } = useSelector(getSlice);
-  const dispatch = useDispatch();
+  const { limit, offset } = useSelector(getSlice);
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
-    dispatch(setIsBooksLoading(true));
-
-    getBooks()
-      .then((data) => {
-        dispatch(setBooks(data));
-      })
-      .finally(() => dispatch(setIsBooksLoading(false)));
+    dispatch(getBooksThunk());
   }, [dispatch]);
 
   if (loading) {

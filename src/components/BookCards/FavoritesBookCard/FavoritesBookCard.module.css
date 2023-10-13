@@ -1,22 +1,28 @@
 .favorite {
   display: flex;
+  padding: 0 100px;
+  justify-content: space-between;
+  gap: 48px;
 }
 
 .image {
 }
 
 .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
   width: 60%;
 }
 
 .top_info {
-  align-items: flex-start;
 }
 
 .title {
+  margin-bottom: 8px;
 }
 
-.other {
+.subtitle {
 }
 
 .authors {
@@ -29,7 +35,6 @@
 }
 
 .bottom_info {
-  align-items: flex-end;
 }
 
 .price {
@@ -39,4 +44,5 @@
 }
 
 .remove {
+  display: flex;
 }

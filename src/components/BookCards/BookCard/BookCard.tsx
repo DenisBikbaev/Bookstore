@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 import { Book } from "../../../api/books/getBook";
 import Tabs, { Tab } from "../../Tabs/Tabs";
@@ -9,8 +9,12 @@ import Button from "../../Button/Button";
 import Social from "../../Social/Social";
 import Subscribe from "../../Subscribe/Subscribe";
 import Icon from "../../Icon/Icon";
+import { RandomColor } from "../../../utils/RandomColor";
 
 import styles from "./BookCard.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { toggleBookIsCart } from "../../../store/books/books.reducers";
+import { getSlice } from "../../../store/books/books.selectors";
 
 interface BookCardProps {
   book: Book;
@@ -32,9 +36,24 @@ const tabs: Tab[] = [
 ];
 
 const BookCard: React.FC<BookCardProps> = ({ book }) => {
+  const dispatch = useDispatch();
+  const cartBook = useSelector(getSlice);
   const [activeTab, setActiveTab] = useState(tabs[0].value);
+  const bacgroundColor = useMemo(RandomColor, []);
+
+  useEffect(() => {
+    if (cartBook.cartBooks.length > 0) {
+      localStorage.setItem("cart", JSON.stringify(cartBook.cartBooks));
+    }
+  }, [cartBook.cartBooks]);
 
   const handleChangeTab = (tab: Tab) => setActiveTab(tab.value);
+
+  const addToCart = () => {
+    if (book) {
+      dispatch(toggleBookIsCart(book));
+    }
+  };
 
   return (
     <div className={styles.wrapper}>
@@ -53,7 +72,10 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
           {book.title}
         </Typography>
         <div className={styles.top_container}>
-          <div className={styles.image_container}>
+          <div
+            className={styles.image_container}
+            style={{ backgroundColor: bacgroundColor }}
+          >
             <img src={book.image} alt={book.title} className={styles.image} />
             <div className={styles.heart_container}>
               <BookAction book={book} />
@@ -135,7 +157,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
                 <span>{book.year}</span>
               </Typography>
             </div>
-            <Button>add to cart</Button>
+            <Button onClick={addToCart}>add to cart</Button>
             <button className={styles.preview}>Preview book</button>
           </div>
         </div>

@@ -14,20 +14,36 @@ const Favorites: React.FC<FavoritesProps> = () => {
 
   if (favoriteBook.favoriteBook.length === 0) {
     return (
-      <Typography
-        variant="h2"
-        color="primary"
-        font="BebasNeue-Bold"
-        className={styles.empty}
-      >
-        Пусто
-      </Typography>
+      <>
+        <Typography
+          variant="h1"
+          color="primary"
+          font="BebasNeue-Bold"
+          className={styles.title}
+        >
+          Favorites
+        </Typography>
+
+        <Typography
+          variant="h2"
+          color="primary"
+          font="BebasNeue-Bold"
+          className={styles.empty}
+        >
+          Пусто
+        </Typography>
+      </>
     );
   }
 
   return (
     <>
-      <Typography variant="h1" color="primary" font="BebasNeue-Bold">
+      <Typography
+        variant="h1"
+        color="primary"
+        font="BebasNeue-Bold"
+        className={styles.title}
+      >
         Favorites
       </Typography>
       <ul className={styles.favorite}>

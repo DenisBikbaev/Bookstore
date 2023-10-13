@@ -1,9 +1,15 @@
-.favorite_book {
-  list-style: none;
+.title {
+  padding: 0 100px;
+  margin-bottom: 48px;
 }
 
-.book {
-  display: flex;
+.favorite {
+  margin-bottom: 72px;
+}
+
+.favorite_book {
+  list-style: none;
+  margin-bottom: 48px;
 }
 
 .empty {

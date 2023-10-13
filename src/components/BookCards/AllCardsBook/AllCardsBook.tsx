@@ -1,18 +1,23 @@
+import { useMemo } from "react";
+
 import Typography from "../../Typography/Typography";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar } from "@fortawesome/free-regular-svg-icons";
+import { Book } from "../../../api/books/getBook";
 
 import styles from "./AllCardsBook.module.css";
-import { Book } from "../../../api/books/getBook";
+import { RandomColor } from "../../../utils/RandomColor";
 
 interface BooksCardsProps {
   books: Book;
 }
 
 const BookCards: React.FC<BooksCardsProps> = ({ books }) => {
+  const bacgroundColor = useMemo(RandomColor, []);
   return (
     <>
-      <div className={styles.imgage}>
+      <div
+        className={styles.imgage}
+        style={{ backgroundColor: bacgroundColor }}
+      >
         <img className={styles.img} src={books.image} alt={books.title} />
       </div>
       <div className={styles.info}>
@@ -37,23 +42,7 @@ const BookCards: React.FC<BooksCardsProps> = ({ books }) => {
           <div className={styles.price}>
             <Typography>{books.price}</Typography>
           </div>
-          <div className={styles.rating}>
-            <button className={styles.btn_rating}>
-              <FontAwesomeIcon icon={faStar} />
-            </button>
-            <button className={styles.btn_rating}>
-              <FontAwesomeIcon icon={faStar} />
-            </button>
-            <button className={styles.btn_rating}>
-              <FontAwesomeIcon icon={faStar} />
-            </button>
-            <button className={styles.btn_rating}>
-              <FontAwesomeIcon icon={faStar} />
-            </button>
-            <button className={styles.btn_rating}>
-              <FontAwesomeIcon icon={faStar} />
-            </button>
-          </div>
+          <div className={styles.rating}></div>
         </div>
       </div>
     </>

@@ -1,0 +1,18 @@
+.title {
+  padding: 0 100px;
+  margin-bottom: 48px;
+}
+
+.empty {
+  text-align: center;
+  padding: 100px;
+}
+
+.cart {
+  margin-bottom: 72px;
+}
+
+.cart_book {
+  list-style: none;
+  margin-bottom: 48px;
+}

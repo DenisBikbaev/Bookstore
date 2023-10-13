@@ -7,13 +7,15 @@ import Icon from "../Icon/Icon";
 
 import styles from "./BookAction.module.css";
 import { getSlice } from "../../store/books/books.selectors";
+import { useDidUpdate } from "../../hooks/useDidUpdate";
+import { AppDispatch } from "../../store";
 
 interface BookActionsProps {
   book: Book;
 }
 
 const BookAction: React.FC<BookActionsProps> = ({ book }) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const favoriteBook = useSelector(getSlice);
   const [active, setActive] = useState(false);
 

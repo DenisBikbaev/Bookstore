@@ -12,6 +12,7 @@ import Book from "../pages/Book";
 import Main from "../pages/Main";
 import Search from "../pages/Search";
 import Favorite from "../pages/Favorite";
+import Cart from "../pages/Cart";
 
 const Router: React.FC = () => {
   const router = createBrowserRouter(
@@ -22,6 +23,8 @@ const Router: React.FC = () => {
         <Route path="/" element={<Main />} />
 
         <Route path="/favorite" element={<Favorite />} />
+
+        <Route path="/cart" element={<Cart />} />
 
         <Route path="/books/:id" element={<Book />} />
 

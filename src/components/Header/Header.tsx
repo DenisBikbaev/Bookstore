@@ -52,7 +52,7 @@ const Header: React.FC = () => {
           </NavLink>
         </Button>
         <Button type="button" variant="icon">
-          <NavLink to={"/"}>
+          <NavLink to={"/cart"}>
             <Icon type={"cart"} />
           </NavLink>
         </Button>

@@ -3,25 +3,23 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 
 import { getSlice } from "../../store/books/books.selectors";
-import { setBook, setIsBookLoading } from "../../store/books/books.reducers";
 
 import styles from "./BookDetail.module.css";
-import { getBook } from "../../api/books/getBook";
+
 import BookCard from "../BookCards/BookCard/BookCard";
+import { getBookThunk } from "../../store/books/books.actions";
+import { AppDispatch } from "../../store";
 
 const BookDetail: React.FC = () => {
   const { id: bookId } = useParams();
   const { book, isBookLoading: loading } = useSelector(getSlice);
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
 
   useEffect(() => {
     if (!bookId) return;
 
-    dispatch(setIsBookLoading(true));
-    getBook({ id: bookId })
-      .then((data) => dispatch(setBook(data)))
-      .finally(() => dispatch(setIsBookLoading(false)));
+    dispatch(getBookThunk(bookId));
   }, [dispatch, bookId]);
 
   if (loading) {

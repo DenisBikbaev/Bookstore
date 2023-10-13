@@ -1,6 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 import { Book } from "../../api/books/getBook";
+import { getBookThunk, getBooksThunk } from "./books.actions";
 
 interface BooksState {
   isBooksLoading: boolean;
@@ -34,18 +35,6 @@ const booksSlice = createSlice({
   name: "books",
   initialState,
   reducers: {
-    setIsBooksLoading: (state, action: PayloadAction<boolean>) => {
-      state.isBooksLoading = action.payload;
-    },
-    setBooks: (state, action: PayloadAction<Book[]>) => {
-      state.books = action.payload;
-    },
-    setIsBookLoading: (state, action: PayloadAction<boolean>) => {
-      state.isBookLoading = action.payload;
-    },
-    setBook: (state, action: PayloadAction<Book>) => {
-      state.book = action.payload;
-    },
     toggleBookIsFavorite: (state, action: PayloadAction<Book>) => {
       const favoriteBookIndex = state.favoriteBook.findIndex(
         (b) => b.isbn13 === action.payload.isbn13
@@ -89,13 +78,29 @@ const booksSlice = createSlice({
       }
     },
   },
+  extraReducers(builder) {
+    builder.addCase(getBooksThunk.pending, (state) => {
+      state.isBookLoading = true;
+    });
+    builder.addCase(getBooksThunk.fulfilled, (state, action) => {
+      state.isBooksLoading = false;
+      state.books = action.payload;
+      // .map((book) => ({
+      //   ...book,
+      // }));
+    });
+
+    builder.addCase(getBookThunk.pending, (state) => {
+      state.isBookLoading = true;
+    });
+    builder.addCase(getBookThunk.fulfilled, (state, action) => {
+      state.isBookLoading = false;
+      state.book = action.payload;
+    });
+  },
 });
 
 export const {
-  setIsBooksLoading,
-  setIsBookLoading,
-  setBooks,
-  setBook,
   toggleBookIsFavorite,
   setFavorites,
   toggleBookIsCart,

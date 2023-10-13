@@ -1,7 +1,6 @@
 import { client } from "..";
 
 export interface Book {
-  bookId: any;
   error: boolean;
   title: string;
   subtitle: string;
@@ -11,7 +10,7 @@ export interface Book {
   isbn13: string | number;
   pages: string;
   year: string;
-  rating: boolean;
+  rating: string;
   desc: string;
   price: string;
   image: string;

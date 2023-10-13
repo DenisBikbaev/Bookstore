@@ -15,6 +15,8 @@ import { ReactComponent as CancelDisabled } from "./icons/Cancel-Disabled.svg";
 import { ReactComponent as ArrowLeft } from "./icons/Icon-Arrow-Left.svg";
 import { ReactComponent as Minus } from "./icons/minus.svg";
 import { ReactComponent as Plus } from "./icons/plus.svg";
+import { ReactComponent as StarBlack } from "./icons/Star-Black.svg";
+import { ReactComponent as StarWhite } from "./icons/Star-White.svg";
 
 const icons = {
   heart: Heart,
@@ -32,6 +34,8 @@ const icons = {
   arrowLeft: ArrowLeft,
   minus: Minus,
   plus: Plus,
+  starBlack: StarBlack,
+  starWhite: StarWhite,
 };
 
 export type IconType = keyof typeof icons;
