@@ -1,5 +1,5 @@
 .title {
-  padding: 0 100px;
+  padding: 0 50px;
   margin-bottom: 48px;
 }
 
@@ -15,4 +15,11 @@
 .cart_book {
   list-style: none;
   margin-bottom: 48px;
+}
+
+.total {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 50px;
+  margin-bottom: 72px;
 }

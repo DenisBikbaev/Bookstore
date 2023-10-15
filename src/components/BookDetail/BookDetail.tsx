@@ -29,6 +29,7 @@ const BookDetail: React.FC = () => {
   return (
     <div>
       {loading && "Loading"}
+
       {book && <BookCard book={book} />}
     </div>
   );

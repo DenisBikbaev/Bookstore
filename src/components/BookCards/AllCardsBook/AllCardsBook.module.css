@@ -1,5 +1,6 @@
 .imgage {
   position: relative;
+  margin-bottom: 20px;
 }
 
 .img {
@@ -15,10 +16,25 @@
 .action {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .heart_container {
   position: absolute;
   top: 0;
   right: 0;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.title {
+  margin-bottom: 8px;
+}
+
+.text {
+  margin-bottom: 40px;
 }

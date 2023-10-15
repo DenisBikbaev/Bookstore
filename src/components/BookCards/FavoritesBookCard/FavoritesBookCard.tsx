@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { NavLink } from "react-router-dom";
 
 import { Book } from "../../../api/books/getBook";
 import Typography from "../../Typography/Typography";
@@ -8,12 +9,12 @@ import {
   setFavorites,
   toggleBookIsFavorite,
 } from "../../../store/books/books.reducers";
+import { getSlice } from "../../../store/books/books.selectors";
+import { getRandomColor } from "../../../utils/RandomColor";
+import { AppDispatch } from "../../../store";
 
 import styles from "./FavoritesBookCard.module.css";
-import { getSlice } from "../../../store/books/books.selectors";
-import { RandomColor } from "../../../utils/RandomColor";
-import { useDidUpdate } from "../../../hooks/useDidUpdate";
-import { AppDispatch } from "../../../store";
+import StarsRating from "../../StarsRating/StarsRating";
 
 interface FavoritesBookCardProps {
   book: Book;
@@ -22,13 +23,15 @@ interface FavoritesBookCardProps {
 const FavoritesBookCard: React.FC<FavoritesBookCardProps> = ({ book }) => {
   const dispatch = useDispatch<AppDispatch>();
   const favoriteBook = useSelector(getSlice);
-  const bacgroundColor = useMemo(RandomColor, []);
+  const bacgroundColor = useMemo(getRandomColor, []);
 
   const handleRemoveClick = () => {
     if (book) {
       dispatch(toggleBookIsFavorite(book));
     }
   };
+
+  // useEffect(() => {}, []);
 
   useEffect(() => {
     if (favoriteBook.favoriteBook.length > 0) {
@@ -48,16 +51,26 @@ const FavoritesBookCard: React.FC<FavoritesBookCardProps> = ({ book }) => {
 
   return (
     <div className={styles.favorite}>
-      <div className={styles.image} style={{ backgroundColor: bacgroundColor }}>
-        <img src={book.image} alt={book.title} />
-      </div>
+      <NavLink to={`/books/${book.isbn13}`} style={{ textDecoration: "none" }}>
+        <div
+          className={styles.image}
+          style={{ backgroundColor: bacgroundColor }}
+        >
+          <img src={book.image} alt={book.title} />
+        </div>
+      </NavLink>
       <div className={styles.info}>
         <div className={styles.top_info}>
-          <div className={styles.title}>
-            <Typography variant="h3" color="primary" font="BebasNeue-Bold">
-              {book.title}
-            </Typography>
-          </div>
+          <NavLink
+            to={`/books/${book.isbn13}`}
+            style={{ textDecoration: "none" }}
+          >
+            <div className={styles.title}>
+              <Typography variant="h3" color="primary" font="BebasNeue-Bold">
+                {book.title}
+              </Typography>
+            </div>
+          </NavLink>
           <div className={styles.subtitle}>
             <Typography variant="span" color="secondary" font="Helios-Regular">
               by
@@ -79,7 +92,9 @@ const FavoritesBookCard: React.FC<FavoritesBookCardProps> = ({ book }) => {
               {book.price}
             </Typography>
           </div>
-          <div className={styles.rating}>{book.rating}</div>
+          <div className={styles.rating}>
+            <StarsRating rating={book.rating} />
+          </div>
         </div>
       </div>
       <div className={styles.remove}>

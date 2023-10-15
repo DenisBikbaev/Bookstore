@@ -6,11 +6,17 @@ import Typography from "../Typography/Typography";
 
 import styles from "./Cart.module.css";
 import CartBookCard from "../BookCards/CartBookCard/CartBookCard";
+import TotalPrice from "../TotalPrice/TotalPrice";
 
 interface CartProps {}
 
 const Cart: React.FC<CartProps> = () => {
   const cartBook = useSelector(getSlice);
+
+  const totalPrice = cartBook.cartBooks.reduce((acc, book) => {
+    const bookOnePrice = +book.price.slice(1);
+    return acc + bookOnePrice * book.count;
+  }, 0);
 
   if (cartBook.cartBooks.length === 0) {
     return (
@@ -53,6 +59,9 @@ const Cart: React.FC<CartProps> = () => {
           </li>
         ))}
       </ul>
+      <div className={styles.total}>
+        <TotalPrice sumTotalPrice={+totalPrice} />
+      </div>
     </>
   );
 };

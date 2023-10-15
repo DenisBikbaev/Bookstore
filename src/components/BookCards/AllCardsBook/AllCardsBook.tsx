@@ -4,45 +4,55 @@ import Typography from "../../Typography/Typography";
 import { Book } from "../../../api/books/getBook";
 
 import styles from "./AllCardsBook.module.css";
-import { RandomColor } from "../../../utils/RandomColor";
+import { getRandomColor } from "../../../utils/RandomColor";
+import StarsRating from "../../StarsRating/StarsRating";
 
 interface BooksCardsProps {
-  books: Book;
+  book: Book;
 }
 
-const BookCards: React.FC<BooksCardsProps> = ({ books }) => {
-  const bacgroundColor = useMemo(RandomColor, []);
+const BookCards: React.FC<BooksCardsProps> = ({ book }) => {
+  const bacgroundColor = useMemo(getRandomColor, []);
+
   return (
     <>
       <div
         className={styles.imgage}
         style={{ backgroundColor: bacgroundColor }}
       >
-        <img className={styles.img} src={books.image} alt={books.title} />
+        <img className={styles.img} src={book.image} alt={book.title} />
       </div>
       <div className={styles.info}>
         <div className={styles.description}>
           <div className={styles.title}>
-            <Typography>{books.title}</Typography>
+            <Typography variant="h3" color="primary" font="BebasNeue-Bold">
+              {book.title}
+            </Typography>
           </div>
           <div className={styles.text}>
-            <div>by</div>
             <div>
-              <Typography>{books.authors}</Typography>
+              <Typography
+                variant="span"
+                color="secondary"
+                font="Helios-Regular"
+              >
+                {book.subtitle}
+              </Typography>
             </div>
-            <div>
-              <Typography>{books.publisher}</Typography>
-            </div>
-            <div>
-              <Typography>{books.year}</Typography>
-            </div>
+            <div></div>
           </div>
         </div>
         <div className={styles.action}>
           <div className={styles.price}>
-            <Typography>{books.price}</Typography>
+            <Typography variant="h3" color="primary" font="BebasNeue-Bold">
+              {book.price}
+            </Typography>
           </div>
-          <div className={styles.rating}></div>
+          <div className={styles.rating}>
+            <Typography variant="h3" color="primary" font="BebasNeue-Bold">
+              <StarsRating rating={4} />
+            </Typography>
+          </div>
         </div>
       </div>
     </>

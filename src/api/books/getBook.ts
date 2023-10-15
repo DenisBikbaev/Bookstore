@@ -10,14 +10,13 @@ export interface Book {
   isbn13: string | number;
   pages: string;
   year: string;
-  rating: string;
+  rating: number;
   desc: string;
   price: string;
   image: string;
   url: string;
   pdf: {};
-  addItem: number;
-  deleteItem: number;
+  count: number;
 }
 
 type GetBookParams = { id: Book["isbn13"] };

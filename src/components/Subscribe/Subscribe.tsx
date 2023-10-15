@@ -1,15 +1,9 @@
-import React, { useState } from "react";
-
-import styles from "./Subscribe.module.css";
+import Button from "../Button/Button";
 import Typography from "../Typography/Typography";
 
+import styles from "./Subscribe.module.css";
+
 const Subscribe = () => {
-  const [searchValue, setSearchValue] = useState("");
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(e.target.value);
-  };
-
   return (
     <div className={styles.wrapper}>
       <div className={styles.subscribe}>
@@ -27,10 +21,8 @@ const Subscribe = () => {
             type="email"
             placeholder="Your email"
             className={styles.input}
-            value={searchValue}
-            onChange={handleChange}
           />
-          <button className={styles.button}>Subscribe</button>
+          <Button className={styles.button}>Subscribe</Button>
         </div>
       </div>
     </div>

@@ -4,11 +4,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Book } from "../../api/books/getBook";
 import { toggleBookIsFavorite } from "../../store/books/books.reducers";
 import Icon from "../Icon/Icon";
+import { getSlice } from "../../store/books/books.selectors";
+import { AppDispatch } from "../../store";
 
 import styles from "./BookAction.module.css";
-import { getSlice } from "../../store/books/books.selectors";
-import { useDidUpdate } from "../../hooks/useDidUpdate";
-import { AppDispatch } from "../../store";
 
 interface BookActionsProps {
   book: Book;
