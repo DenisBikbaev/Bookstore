@@ -80,7 +80,7 @@ const Header: React.FC = () => {
           </NavLink>
         </Button>
         <Button type="button" variant="icon">
-          <NavLink to={"/"}>
+          <NavLink to={"/authorization"}>
             <Icon type={"account"} />
           </NavLink>
         </Button>

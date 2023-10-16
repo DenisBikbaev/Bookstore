@@ -24,7 +24,7 @@ const TotalPrice: React.FC<TotalPriceProps> = ({ sumTotalPrice }) => {
             Sum total
           </Typography>
           <Typography variant="span" color="primary" font="Helios-Regular">
-            {`$ ${sumTotalPrice}`}
+            {`$ ${sumTotalPrice.toFixed(2)}`}
           </Typography>
         </div>
         <div className={styles.info}>

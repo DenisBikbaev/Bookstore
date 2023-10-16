@@ -10,9 +10,10 @@ import {
 
 import Book from "../pages/Book";
 import Main from "../pages/Main";
-import Search from "../pages/Search";
+
 import Favorite from "../pages/Favorite";
 import Cart from "../pages/Cart";
+import Authorization from "../pages/Authorization";
 
 const Router: React.FC = () => {
   const router = createBrowserRouter(
@@ -28,7 +29,7 @@ const Router: React.FC = () => {
 
         <Route path="/books/:id" element={<Book />} />
 
-        <Route path="/search" element={<Search />} />
+        <Route path="authorization" element={<Authorization />} />
       </>
     )
   );

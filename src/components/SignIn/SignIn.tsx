@@ -9,14 +9,14 @@ const SignIn = () => {
   return (
     <div>
       <form className={styles.form}>
-        <Typography
+        {/* <Typography
           variant="h6"
           color="primary"
           font="BebasNeue-Bold"
           className={styles.title}
         >
           Sign In
-        </Typography>
+        </Typography> */}
         <Input label="Email" placeholder="Your email" type="email" />
         <Input label="Password" placeholder="Your password" type="password" />
         <p className={styles.paragraph}>

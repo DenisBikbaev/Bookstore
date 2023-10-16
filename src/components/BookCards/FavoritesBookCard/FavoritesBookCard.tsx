@@ -31,8 +31,6 @@ const FavoritesBookCard: React.FC<FavoritesBookCardProps> = ({ book }) => {
     }
   };
 
-  // useEffect(() => {}, []);
-
   useEffect(() => {
     if (favoriteBook.favoriteBook.length > 0) {
       localStorage.setItem(
