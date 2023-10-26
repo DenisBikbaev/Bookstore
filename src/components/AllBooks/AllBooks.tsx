@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 
-import BookCards from "../BookCards/AllCardsBook/AllCardsBook";
 import { getSlice } from "../../store/books/books.selectors";
 
 import styles from "./AllBooks.module.css";
@@ -12,17 +11,18 @@ import {
 } from "../../store/books/books.actions";
 import { AppDispatch } from "../../store";
 import Typography from "../Typography/Typography";
+import AllCardsBook from "../BookCards/AllCardsBook/AllCardsBook";
 
 interface AllBooksProps {}
 
 const AllBooks: React.FC<AllBooksProps> = () => {
-  const { books, isBooksLoading: loading } = useSelector(getSlice);
-  const { search, page } = useSelector(getSlice);
+  const {
+    books,
+    isBooksLoading: loading,
+    search,
+    page,
+  } = useSelector(getSlice);
   const dispatch = useDispatch<AppDispatch>();
-
-  useEffect(() => {
-    dispatch(getBooksThunk());
-  }, [dispatch]);
 
   useEffect(() => {
     if (search.length > 0) {
@@ -54,7 +54,7 @@ const AllBooks: React.FC<AllBooksProps> = () => {
                   to={`/books/${book.isbn13}`}
                   style={{ textDecoration: "none" }}
                 >
-                  <BookCards book={book} />
+                  <AllCardsBook book={book} />
                 </NavLink>
               </li>
             ))}
@@ -77,7 +77,7 @@ const AllBooks: React.FC<AllBooksProps> = () => {
                   to={`/books/${book.isbn13}`}
                   style={{ textDecoration: "none" }}
                 >
-                  <BookCards book={book} />
+                  <AllCardsBook book={book} />
                 </NavLink>
               </li>
             ))}

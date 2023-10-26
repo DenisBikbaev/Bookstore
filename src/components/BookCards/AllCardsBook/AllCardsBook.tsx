@@ -11,7 +11,7 @@ interface BooksCardsProps {
   book: Book;
 }
 
-const BookCards: React.FC<BooksCardsProps> = ({ book }) => {
+const AllCardsBook: React.FC<BooksCardsProps> = ({ book }) => {
   const bacgroundColor = useMemo(getRandomColor, []);
 
   return (
@@ -59,4 +59,4 @@ const BookCards: React.FC<BooksCardsProps> = ({ book }) => {
   );
 };
 
-export default BookCards;
+export default AllCardsBook;

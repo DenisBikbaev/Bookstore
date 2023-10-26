@@ -7,17 +7,17 @@ interface StarsRatingProps {
 }
 
 const StarsRating: React.FC<StarsRatingProps> = ({ rating }) => {
-  const stars = Array.from(new Array(5), (value, index) => index + 1);
-
-  const srtarRating = stars.map((star) => {
-    if (star <= rating) {
-      return <Icon type={"starBlack"} />;
-    } else if (star > rating) {
-      return <Icon type={"starWhite"} />;
+  const stars = Array.from(new Array(5), (_, index) => index + 1).map(
+    (star) => {
+      if (star <= rating) {
+        return <Icon type={"starBlack"} />;
+      } else if (star > rating) {
+        return <Icon type={"starWhite"} />;
+      }
     }
-  });
+  );
 
-  return <div>{srtarRating}</div>;
+  return <div>{stars}</div>;
 };
 
 export default StarsRating;

@@ -4,10 +4,9 @@ import { client } from "..";
 export type GetBooksParams = { page?: number; search?: string };
 
 export type GetBooksSuccessResponse = {
-  books: any;
   total: string;
   page: number;
-  book: Book[];
+  books: Book[];
 };
 
 export const getBooksSearch = (

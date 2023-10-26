@@ -19,7 +19,7 @@ interface BooksState {
 
   search: string;
   page: number;
-  foundBooks: Book[];
+  // foundBooks: Book[];
   isSearchBooksLoading: boolean;
 
   limit: number;
@@ -38,7 +38,7 @@ const initialState: BooksState = {
 
   search: "",
   page: 1,
-  foundBooks: [],
+  // foundBooks: [],
   isSearchBooksLoading: false,
 
   limit: 20,
@@ -127,6 +127,7 @@ const booksSlice = createSlice({
     builder.addCase(getSearchBooksThunk.fulfilled, (state, action) => {
       state.isSearchBooksLoading = false;
       state.books = action.payload.books;
+      state.page = action.payload.page;
     });
   },
 });

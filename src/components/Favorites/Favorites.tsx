@@ -1,16 +1,26 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 import { getSlice } from "../../store/books/books.selectors";
 import Typography from "../Typography/Typography";
 import FavoritesBookCard from "../BookCards/FavoritesBookCard/FavoritesBookCard";
 
 import styles from "./Favorites.module.css";
+import { setFavorites } from "../../store/books/books.reducers";
 
 interface FavoritesProps {}
 
 const Favorites: React.FC<FavoritesProps> = () => {
   const favoriteBook = useSelector(getSlice);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const favBookInLocalStorage = localStorage.getItem("favorites");
+
+    if (favBookInLocalStorage) {
+      dispatch(setFavorites(JSON.parse(favBookInLocalStorage)));
+    }
+  }, [dispatch]);
 
   if (favoriteBook.favoriteBook.length === 0) {
     return (
